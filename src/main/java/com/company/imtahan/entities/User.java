@@ -15,6 +15,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -102,6 +104,9 @@ public class User implements Serializable {
     @Size(max = 255)
     @Column(name = "contact_number")
     private String contactNumber;
+    @JoinColumn(name = "group_id", referencedColumnName = "id")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private AuthGroup groupId;
     @OneToMany(mappedBy = "userId", fetch = FetchType.LAZY)
     private List<UserReport> userReportList;
 
@@ -211,6 +216,14 @@ public class User implements Serializable {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public AuthGroup getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(AuthGroup groupId) {
+        this.groupId = groupId;
     }
 
     @XmlTransient

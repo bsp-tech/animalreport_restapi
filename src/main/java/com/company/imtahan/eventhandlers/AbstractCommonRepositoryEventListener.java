@@ -5,7 +5,7 @@
  */
 package com.company.imtahan.eventhandlers;
 
-import com.company.imtahan.security.SecurityUtil;
+//import com.company.imtahan.security.SecurityUtil;
 
 import java.lang.reflect.Method;
 import java.util.Date;
@@ -50,11 +50,11 @@ public abstract class AbstractCommonRepositoryEventListener<T> extends AbstractR
     }
 
 
-    private void setInsertUserId(T entity) throws Exception {
-        Class<?> c = entity.getClass();
-        Method method = c.getDeclaredMethod("setInsertUserId", User.class);
-        method.invoke(entity, userRepo.getOne(securityUtil.loggedInUser().getId()));
-    }
+//    private void setInsertUserId(T entity) throws Exception {
+//        Class<?> c = entity.getClass();
+//        Method method = c.getDeclaredMethod("setInsertUserId", User.class);
+//        method.invoke(entity, userRepo.getOne(securityUtil.loggedInUser().getId()));
+//    }
 
     private void setLastChangeDate(T entity, Date date) throws Exception {
         Class<?> c = entity.getClass();
