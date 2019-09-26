@@ -6,9 +6,6 @@
 package com.company.imtahan.controllers;
 
 import com.company.imtahan.dto.ResponseDTO;
-import com.company.imtahan.entities.User;
-import com.company.imtahan.projections.UserProjection;
-import com.company.imtahan.repository.UserRepository;
 import com.company.imtahan.security.SecurityUtil;
 import com.company.imtahan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

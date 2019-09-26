@@ -5,8 +5,6 @@
  */
 package com.company.imtahan.eventhandlers;
 
-import com.company.imtahan.entities.User;
-import com.company.imtahan.repository.UserRepository;
 import com.company.imtahan.security.SecurityUtil;
 import java.lang.reflect.Method;
 import java.util.Date;
