@@ -2,6 +2,7 @@ package com.company.imtahan;
 
 import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -12,18 +13,18 @@ public class RepositoryConfiguration extends RepositoryRestConfigurerAdapter {
 
     @Autowired
     private EntityManager entityManager;
-    
+
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         // config.exposeIdsFor(Feedback.class);
         // config.exposeIdsFor(Help.class);
 
         config.exposeIdsFor(
-            entityManager
-            .getMetamodel().getEntities()
-            .stream().map(e -> e.getJavaType())
-            .collect(Collectors.toList())
-            .toArray(new Class[0])
+                entityManager
+                        .getMetamodel().getEntities()
+                        .stream().map(e -> e.getJavaType())
+                        .collect(Collectors.toList())
+                        .toArray(new Class[0])
         );
-    } 
+    }
 }

@@ -6,16 +6,17 @@
 package com.company.imtahan.repository;
 
 /**
- *
  * @author sarkhanrasullu
  */
 
+import com.company.imtahan.entities.Report;
+import com.company.imtahan.projections.ReportProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.transaction.annotation.Transactional;
 
-@RepositoryRestResource(excerptProjection = TeacherProjection.class)
+@RepositoryRestResource(excerptProjection = ReportProjection.class)
 @Transactional
-public interface TeacherRepository extends JpaRepository<Teacher, Integer>{
-    
+public interface ReportRepository extends JpaRepository<Report, Integer> {
+
 }
